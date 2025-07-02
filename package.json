@@ -1,6 +1,6 @@
 {
   "name": "playwright-in-electron",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Run playwright within an electron app.",
   "main": "./bin/index.js",
   "scripts": {
@@ -9,6 +9,9 @@
     "test": "electron ./bin/test.js",
     "all": "npm run lint && npm run build && npm run test"
   },
+  "files":[
+    "./bin/*"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Steven-Qiang/playwright-in-electron.git"
