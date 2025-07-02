@@ -11,7 +11,7 @@
 
 ## initialize
 
-Initialize the electron app to accept puppeteer/DevTools connections.
+Initialize the electron app to accept playwright/DevTools connections.
 Must be called at startup before the electron app is ready.
 
 ### Parameters
@@ -21,26 +21,26 @@ Must be called at startup before the electron app is ready.
 
 ## connect
 
-Connects puppeteer to the electron app. Must call [initialize][8] before connecting.
+Connects playwright to the electron app. Must call [initialize][8] before connecting.
 When connecting multiple times, you use the same port.
 
 ### Parameters
 
 -   `app` **App** The app imported from electron.
--   `puppeteer` **puppeteer** The imported puppeteer namespace.
+-   `playwright` **playwright** The imported playwright namespace.
 
-Returns **[Promise][9]&lt;Browser>** An object containing the puppeteer browser, the port, and json received from DevTools.
+Returns **[Promise][9]&lt;Browser>** An object containing the playwright browser, the port, and json received from DevTools.
 
 ## getPage
 
-Given a BrowserWindow, find the corresponding puppeteer Page. It is undefined if external operations
+Given a BrowserWindow, find the corresponding playwright Page. It is undefined if external operations
 occur on the page whilst we are attempting to find it. A url/file must be loaded on the window for it to be found.
 If no url is loaded, the parameter 'allowBlankNavigate' allows us to load "about:blank" first.
 
 ### Parameters
 
--   `browser` **Browser** The puppeteer browser instance obtained from calling |connect|.
--   `window` **BrowserWindow** The browser window for which we want to find the corresponding puppeteer Page.
+-   `browser` **Browser** The playwright browser instance obtained from calling |connect|.
+-   `window` **BrowserWindow** The browser window for which we want to find the corresponding playwright Page.
 -   `allowBlankNavigate` **[boolean][10]** If no url is loaded, allow us to load "about:blank" so that we may find the Page. (optional, default `true`)
 
 Returns **[Promise][9]&lt;Page>** The page that corresponds with the BrowserWindow.
